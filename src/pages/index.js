@@ -1,10 +1,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import * as jalaali from 'jalaali-js'
+
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { changeToJalali } from "../utils/makeJalaliDate"
+
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,10 +19,13 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="همه پست ها" />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          const dateJalali = changeToJalali(node.frontmatter.date);
+
+
           return (
             <article key={node.fields.slug}>
               <header>
@@ -30,7 +38,7 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
+                <small>{dateJalali}</small>
               </header>
               <section>
                 <p
@@ -64,7 +72,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY MM DD")
             title
             description
           }

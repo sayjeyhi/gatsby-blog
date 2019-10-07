@@ -1,3 +1,5 @@
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+// import "typeface-yekan"
+// import "typeface-vazir"
+// import "typeface-lalezarregular"
+

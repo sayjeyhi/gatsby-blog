@@ -1,14 +1,10 @@
 ---
-title: New Beginnings
+title: نکته‌های حرفه ای با ریکت
 date: "2015-05-28T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+description: چقدر با ریکت حرفه کار می‌کنید؟
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
-
+جدای استفاده از کامپوننت‌های طراحی شدهخ توسط افراد مشهور ، گاهی اوقات یا اکثر اوقات براساس سبک و سلیقه کارکردی شما 
 ## On deer horse aboard tritely yikes and much
 
 The Big Oxmox advised her not to do so, because there were thousands of bad
@@ -97,7 +93,7 @@ Alphabet Village and the subline of her own road, the Line Lane. Pityful a
 rhetoric question ran over her cheek, then she continued her way. On her way she
 met a copy.
 
-###### Slapped cozy a that lightheartedly and far
+###### هیچ گاه از شروع تازه نترسید ، شما خواهید برد 
 
 The copy warned the Little Blind Text, that where it came from it would have
 been rewritten a thousand times and everything that was left from its origin

@@ -62,3 +62,41 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+
+
+// Make sitemap
+const sm = require(`sitemap`)
+
+
+//const pages = edge.node.frontmatter.path
+function pagesToSitemap(pages) {
+  const urls = pages.map((p) => {
+    if (p.path !== undefined) {
+      return {
+        url: p.path,
+        changefreq: 'daily',
+        priority: 0.7
+      }
+    }
+  })
+  // remove undefined (template pages)
+  return urls.filter(u => u !== undefined)
+}
+
+function generateSiteMap(pages) {
+  const sitemap = sm.createSitemap({
+    hostname: 'http://localhost:8000',
+    cacheTime: '60000',
+    urls: pagesToSitemap(pages),
+  })
+  fs.writeFileSync(
+    `${__dirname}/public/sitemap.xml`,
+    sitemap.toString()
+  )
+}
+
+exports.onPostBuild = ({pages, callback}) => {
+  generateSiteMap(pages)
+  callback()
+}
