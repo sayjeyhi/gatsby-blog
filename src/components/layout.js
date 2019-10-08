@@ -15,7 +15,7 @@ class Layout extends React.Component {
           className={'sitename'}
           style={{
             ...scale(1.5),
-            marginBottom: rhythm(1.5),
+            marginBottom: 0,
             marginTop: 0,
           }}
         >
@@ -33,11 +33,12 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <h3
+        <h2
           className={'sitename'}
           style={{
             // fontFamily: `'Lalezar-Regular', sans-serif`,
             marginTop: 0,
+            marginBottom: 0,
           }}
         >
           <Link
@@ -50,12 +51,20 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </h3>
+        </h2>
       )
     }
     return (
       <>
-        <header>{header}</header>
+        <header style={{
+          background: '#f7e9ec',
+          margin: '10px 2%',
+          borderRadius: 20,
+          height: 120,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>{header}</header>
         <main style={{
           marginRight: `auto`,
           marginLeft: `auto`,

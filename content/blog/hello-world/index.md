@@ -2,6 +2,7 @@
 title: سلام دنیا
 date: "2019-10-02T22:12:03.284Z"
 description: "سلام دنیای خوشگل"
+category: bb
 ---
 
 This is my first post on my new fake blog! How exciting!

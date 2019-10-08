@@ -8,5 +8,5 @@ export const changeToJalali = date => {
     parseInt(dateSplatted[2])
   );
 
-  return `${jalaliDateArray['jy']}/${jalaliDateArray['jm']}/${jalaliDateArray['jd']} ${dateSplatted[3]}`
+  return `${jalaliDateArray['jy']}/${jalaliDateArray['jm']}/${jalaliDateArray['jd']}`
 }

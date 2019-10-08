@@ -1,10 +1,13 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const categories = require('json!./content/categories.json')
+
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogCategories = path.resolve(`./src/templates/blog-categories.js`)
   const result = await graphql(
     `
       {
@@ -47,6 +50,11 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
+  })
+
+  // make categories page
+  categories.map(category => {
+
   })
 }
 
