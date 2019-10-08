@@ -11,10 +11,10 @@ import 'tui-editor/dist/tui-editor-extChart';
 import 'tui-editor/dist/tui-editor-extTable';
 
 import {basicViewerDummy} from './data/dummy';
-import {Editor} from './src';
+import Editor from './src';
 
 
-const Editor = () => {
+const EditorCmp = () => {
   const {content} = basicViewerDummy;
 
   return (
@@ -42,10 +42,6 @@ const Editor = () => {
   );
 };
 
-export default Editor;
+export default EditorCmp;
 
 
-ReactDOM.render(
-  <Editor/>,
-  document.getRootNode()
-)
