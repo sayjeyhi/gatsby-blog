@@ -1,7 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import * as jalaali from 'jalaali-js'
-
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"

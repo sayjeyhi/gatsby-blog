@@ -1,13 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const categories = require('json!./content/categories.json')
-
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const blogCategories = path.resolve(`./src/templates/blog-categories.js`)
   const result = await graphql(
     `
       {
@@ -51,11 +48,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-  // make categories page
-  categories.map(category => {
-
-  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -73,38 +65,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 
 
-// Make sitemap
-const sm = require(`sitemap`)
-
-
-//const pages = edge.node.frontmatter.path
-function pagesToSitemap(pages) {
-  const urls = pages.map((p) => {
-    if (p.path !== undefined) {
-      return {
-        url: p.path,
-        changefreq: 'daily',
-        priority: 0.7
-      }
-    }
-  })
-  // remove undefined (template pages)
-  return urls.filter(u => u !== undefined)
-}
-
-function generateSiteMap(pages) {
-  const sitemap = sm.createSitemap({
-    hostname: 'http://localhost:8000',
-    cacheTime: '60000',
-    urls: pagesToSitemap(pages),
-  })
-  fs.writeFileSync(
-    `${__dirname}/public/sitemap.xml`,
-    sitemap.toString()
-  )
-}
-
-exports.onPostBuild = ({pages, callback}) => {
-  generateSiteMap(pages)
-  callback()
-}

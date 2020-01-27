@@ -7,9 +7,6 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { changeToJalali } from "../utils/makeJalaliDate"
 
-import mediumZoom from 'medium-zoom'
-
-mediumZoom('[data-zoomable]')
 
 class BlogPostTemplate extends React.Component {
   render() {
